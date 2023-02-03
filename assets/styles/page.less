@@ -1,0 +1,16 @@
+.page{
+	&-enter-active, &-leave-active {
+		transition: opacity 0.2s ease-in-out;
+		will-change: opacity;
+	}
+	
+	&-enter, &-leave-to {
+		opacity: 0;
+	}
+	
+	&__loader {
+		font-size: 20px;
+		color: @color-green;
+		padding: 20px 0;
+	}
+}

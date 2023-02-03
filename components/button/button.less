@@ -1,0 +1,109 @@
+.button{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    text-align: center;
+    line-height: 100%;
+    text-decoration: none;
+    transition: background 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+    font-size: 16px;
+    border: none;
+    
+    @media @mobile {
+        padding: 14px 5px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    &_background{
+        &_transparent {
+            background-color: transparent;
+            
+            .hover({
+                background-color: @color-green;
+            });
+            
+            &:active {
+                background-color: @color-green;
+            }
+        }
+        
+        &_green {
+            background-color: @color-green;
+            
+            .hover({
+                background-color: darken(@color-green, 12%);
+            });
+            
+            &:active {
+                background-color: darken(@color-green, 12%);
+            }
+        }
+        
+        &_green-dark {
+            background-color: @color-green-dark;
+    
+            .hover({
+                background-color: darken(@color-green-dark, 12%);
+            });
+    
+            &:active {
+                background-color: darken(@color-green-dark, 12%);
+            }
+        }
+    }
+
+    &_color{
+        &_green {
+            color: @color-green;
+            
+            .hover({
+                color: @color-white;
+            });
+            
+            &:active {
+                color: @color-white;
+            }
+        }
+        
+        &_white {
+            color: @color-white;
+        }
+    }
+
+    &_border{
+        border: 2px solid #8AC253;
+    }
+
+    &_radius{
+        border-radius: 10px;
+        
+        @media @mobile {
+            border-radius: 8px;
+        }
+    }
+
+    &__holder{
+        display: flex;
+        align-items: center;
+    }
+
+    &__text{
+        line-height: 100%;
+    }
+
+    &__icon{
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+
+        svg{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

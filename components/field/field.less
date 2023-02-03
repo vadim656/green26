@@ -1,0 +1,43 @@
+.field {
+	position: relative;
+	border-radius: 10px;
+	background-color: @color-white;
+	
+	&__input {
+		background-color: transparent;
+		height: 50px;
+		padding: 0 16px;
+		box-sizing: border-box;
+		width: 100%;
+		outline: none;
+		border-radius: 10px;
+		border: 2px solid transparent;
+		
+		@media @mobile {
+			height: 45px;
+			padding: 0 14px;
+			font-size: 14px;
+		}
+		
+		.placeholder({
+			color: #949494;
+		});
+		
+		&:focus {
+			border-color: @color-green-dark;
+		}
+	}
+	
+	&__error {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 3px);
+		font-size: 10px;
+		line-height: 100%;
+		color: #e74c3c;
+		
+		@media @mobile {
+			font-size: 9px;
+		}
+	}
+}

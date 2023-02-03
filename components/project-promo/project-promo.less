@@ -1,0 +1,324 @@
+.project-promo {
+    padding: 70px 0 0 0;
+
+    @media @mobile {
+        padding: 0;
+    }
+
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+
+        @media @mobile {
+            display: block;
+        }
+    }
+
+    &__box {
+        background-color: @color-white;
+        border-radius: 20px;
+        width: calc((100% - 30px) / 2);
+        position: relative;
+
+        @media @tablet {
+            border-radius: 15px;
+        }
+
+        @media @mobile {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        &_slider {
+            @media @mobile {
+                left: -20px;
+                position: relative;
+                width: calc(100% + 40px);
+                border-radius: 0;
+            }
+        }
+
+        &_content {
+            border: 1px solid @color-silver;
+            padding: 40px 40px 45px 40px;
+
+            @media @mobile {
+                margin-top: 20px;
+                padding: 25px;
+            }
+        }
+    }
+
+    &__slider {
+        border-radius: inherit;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+    }
+
+    &__slider-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    &__slider-item {
+        flex-shrink: 0;
+        background-color: @color-silver;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+            padding-bottom: 66.66%;
+
+            @media @mobile {
+                padding-bottom: 75%;
+            }
+        }
+    }
+    
+    &__slider-item-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__navigation {
+        width: 40px;
+        height: 40px;
+        background-color: @color-white;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 1;
+        top: calc((100% - 40px) / 2);
+        cursor: pointer;
+        padding: 8px;
+        outline: none;
+        transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+        @media @mobile {
+            width: 30px;
+            height: 30px;
+            top: calc((100% - 30px) / 2);
+        }
+
+        &_prev {
+            left: 25px;
+
+            @media @mobile {
+                left: 20px;
+            }
+        }
+
+        &_next {
+            right: 25px;
+
+            @media @mobile {
+                right: 20px;
+            }
+            
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &_disabled {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            stroke: #949494;
+            stroke-width: 2px;
+            transition: storke 0.15s ease-in-out;
+        }
+        
+        .hover({
+            background-color: @color-green;
+            
+            svg {
+                stroke: @color-white;
+            }
+        });
+    }
+
+    &__thumbs {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        right: 25px;
+        overflow: hidden;
+        user-select: none;
+
+        @media @mobile {
+            left: 20px;
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+
+    &__thumbs-wrapper {
+        display: flex;
+    }
+
+    &__thumbs-item {
+        flex-shrink: 0;
+        border: 3px solid @color-white;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        width: calc((100% - 14px * 4) / 5);
+        cursor: pointer;
+        transition: border-color 0.15s ease-in-out;
+
+        @media @mobile {
+            border-radius: 5px;
+            border: 1.5px solid @color-white;
+            width: calc((100% - 10px * 4) / 5);
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+            padding-bottom: 66.66%;
+        }
+
+        &_mr {
+            margin-right: 14px;
+
+            @media @mobile {
+                margin-right: 10px;
+            }
+        }
+
+        &_active {
+            border-color: @color-green;
+        }
+    }
+
+    &__thumbs-item-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        object-fit: cover;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 100%;
+        margin-bottom: 25px;
+
+        @media @mobile {
+            font-size: 22px;
+            line-height: 120%;
+        }
+    }
+
+    &__specifications {
+        margin-bottom: 30px;
+
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__specifications-row {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px dashed @color-gray;
+
+        @media @mobile {
+            margin-bottom: 10px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__specifications-text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        padding-right: 10px;
+        background-color: @color-white;
+        position: relative;
+        bottom: -2px;
+
+        @media @mobile {
+            font-size: 14px;
+            bottom: -6px;
+        }
+
+        &_value {
+            color: @color-green;
+            padding-right: 0;
+            padding-left: 10px;
+        }
+
+        sup {
+            line-height: 0;
+            font-size: 12px;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        margin-bottom: 30px;
+
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media @mobile {
+            align-items: flex-start;
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__button {
+        width: 195px;
+
+        @media @mobile {
+            width: 100%;
+        }
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        color: @color-green;
+
+        @media @mobile {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@desktop-only:~ "(min-width: 1025px)";
+
+.img(@name){
+    background-image: url('~assets/images/@{name}');
+}
+
+.contain {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.icon(@name){
+    background-image: url('~assets/images/@{name}');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.hover(@params) {
+	@media @desktop-only {
+		&:hover {
+			@params();
+		}
+	}
+}
+
+.focus(@params) {
+	&:focus {
+	    @params();
+	}
+}
+
+.active(@params) {
+    &:active {
+        @params();
+    }
+}
+
+.placeholder(@params){
+    &::-webkit-input-placeholder {
+        @params();
+    }
+    &::-moz-placeholder {
+        @params();
+    }
+    &:-moz-placeholder {
+        @params();
+    }
+    &:-ms-input-placeholder{
+        @params();
+    }
+}
