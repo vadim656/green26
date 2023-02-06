@@ -120,7 +120,7 @@ module.exports = {
         id: '89093817',
         webvisor: true,
         clickmap: true,
-        debug: true,
+        debug: false,
         noJS: true,
         disabled: false,
       },
