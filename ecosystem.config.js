@@ -1,10 +1,10 @@
 module.exports = {
-    apps: [
-      {
-        name: 'front',
-        exec_mode: 'cluster',
-        instances: 'max',
-        script: './.output/server/index.mjs'
-      }
-    ]
-  }
+  apps: [
+    {
+      name: 'FRONT',
+      script: 'npm run',
+      args: 'start',
+      max_memory_restart: '100M',
+    },
+  ],
+};
