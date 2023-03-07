@@ -18,7 +18,7 @@ export default {
       if (this.type === 'phone') {
         return {
           is: 'a',
-          href: `tel: ${this.text.replaceAll(' ', '').replaceAll('-', '').replaceAll('(', '').replaceAll(')', '')}`
+          href: `tel: ${this.text.replaceAll(' ', '').replaceAll('-', '').replace('(', '').replace(')', '')}`
         }
       }
 
